@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "states"
+version = "0.1.0"
+description = ""
+authors = ["Mr.Nobody <mrcartoonster@yahoo.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = {extras = ["all"], version = "^0.63.0"}
+environs = "^9.3.2"
+deta = "^0.7"
+
+[tool.poetry.dev-dependencies]
+pytest-clarity = "^0.3.0-alpha.0"
+pytest-picked = "^0.4.6"
+ipython = "^7.22.0"
+prettyprinter = "^0.18.0"
+black = {version = "^21.4b0", allow-prereleases = true}
+pre-commit = "^2.12.1"
+pytest-srcpaths = "^1.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
