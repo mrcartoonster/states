@@ -10,8 +10,8 @@ deta = Deta(env("PROJECT_KEY"))
 db = deta.Base("states")
 
 router = APIRouter(
-    prefix="/items",
-    tags=["items"],
+    prefix="/states",
+    tags=["the states"],
 )
 
 
