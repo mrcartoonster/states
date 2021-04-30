@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from typing import List, Optional
 
-import models
 from deta import Deta
 from environs import Env
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
+from models.state_model import StatesOut
 
 env = Env()
 env.read_env()
@@ -14,12 +14,19 @@ db = deta.Base("states")
 
 router = APIRouter(
     prefix="/states",
-    tags=["the states"],
+    tags=["The States"],
 )
 
 
-@router.get("/", response_model=List[models.StatesOut])
-async def states(q: Optional[str] = None):
+@router.get("/", response_model=List[StatesOut])
+async def states(
+    q: Optional[str] = Query(
+        None,
+        min_length=2,
+        max_length=14,
+        description="Enter at least the first to letters of the state.",
+    ),
+):
     """
     Return US state names with their abbreviations.
     """
