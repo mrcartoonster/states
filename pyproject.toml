@@ -9,6 +9,7 @@ python = "^3.9"
 fastapi = {extras = ["all"], version = "^0.63.0"}
 environs = "^9.3.2"
 deta = "^0.7"
+rich = "^10.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest-clarity = "^0.3.0-alpha.0"
@@ -19,6 +20,7 @@ black = {version = "^21.4b0", allow-prereleases = true}
 pre-commit = "^2.12.1"
 pytest-srcpaths = "^1.0.2"
 backpack = "^0.1"
+interrogate = "^1.3.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
