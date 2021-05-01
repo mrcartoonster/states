@@ -3,14 +3,12 @@
 import logging
 from functools import lru_cache
 
-from deta import Deta
 from environs import Env
 from pydantic import BaseSettings
 from rich.logging import RichHandler
 
 logging.basicConfig(
     level="NOTSET",
-    format="%(messages)s",
     datefmt="[%X]",
     handlers=[RichHandler(rich_tracebacks=True, markup=True)],
 )
@@ -20,15 +18,13 @@ log = logging.getLogger("uvicorn")
 env = Env()
 env.read_env()
 
-detas = Deta(env("PROJECT_KEY"))
-
 
 class Settings(BaseSettings):
     """
     Basic envrionment settings.
     """
 
-    deta: str = detas.Deta(env("PROJECT_KEY"))
+    deta: str = env("PROJECT_KEY")
 
     class Config:
         """

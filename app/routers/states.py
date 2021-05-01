@@ -2,10 +2,10 @@
 # States API routes
 from typing import List, Optional
 
+from config import Settings, get_settings
+from deta import Deta
 from fastapi import APIRouter, Depends, Query
 from models.state_model import StatesOut
-
-from app.config import Settings, get_settings
 
 router = APIRouter(
     prefix="/states",
@@ -26,8 +26,9 @@ async def states(
     """
     Return US state names with their abbreviations.
     """
-    deta = settings.db
-    db = deta.Base("states")
+    deta = settings.deta
+    detas = Deta(deta)
+    db = detas.Base("states")
     if q:
         return next(db.fetch({"states?contains": q.capitalize()}))
     return next(db.fetch())
