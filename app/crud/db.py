@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-from config import Settings
+# Simple Deta *detabase SDK* setup.
 from deta import Deta
+from environs import Env
 
-settings = Settings()
-detas = Settings.deta
-deta = Deta(detas)
+env = Env()
+env.read_env()
+deta = Deta(env("PROJECT_KEY"))
 db = deta.Base("states")
 
 

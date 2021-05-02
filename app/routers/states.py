@@ -2,9 +2,10 @@
 # States API routes
 from typing import List, Optional
 
-from crud.detas import get, get_all
 from fastapi import APIRouter, Query
-from models.state_model import StatesOut
+
+from app.crud.db import get, get_all
+from app.models.state_model import StatesOut
 
 router = APIRouter(
     prefix="/states",
