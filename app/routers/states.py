@@ -2,9 +2,8 @@
 # States API routes
 from typing import List, Optional
 
-from config import Settings, get_settings
-from deta import Deta
-from fastapi import APIRouter, Depends, Query
+from crud.detas import get, get_all
+from fastapi import APIRouter, Query
 from models.state_model import StatesOut
 
 router = APIRouter(
@@ -15,7 +14,6 @@ router = APIRouter(
 
 @router.get("/", response_model=List[StatesOut])
 async def states(
-    settings: Settings = Depends(get_settings),
     q: Optional[str] = Query(
         None,
         min_length=2,
@@ -26,9 +24,6 @@ async def states(
     """
     Return US state names with their abbreviations.
     """
-    deta = settings.deta
-    detas = Deta(deta)
-    db = detas.Base("states")
     if q:
-        return next(db.fetch({"states?contains": q.capitalize()}))
-    return next(db.fetch())
+        return get(q)
+    return get_all()
