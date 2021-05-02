@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # Main API appliction
 from fastapi import FastAPI
-from routers import states
+
+from app.routers import states
 
 
 def create_application() -> FastAPI:
@@ -10,7 +11,7 @@ def create_application() -> FastAPI:
     """
     application = FastAPI(
         title="🇺🇸 State Abbreviations",
-        description="API that returns U.S. State abbreviations.",
+        description="A simple API that returns U.S. State abbreviations.",
         version="0.0.1",
     )
 
