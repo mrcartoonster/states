@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # Main API appliction
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
-from app.routers import states
+from api import states
+from views import home
 
 
 def create_application() -> FastAPI:
@@ -16,6 +18,12 @@ def create_application() -> FastAPI:
     )
 
     application.include_router(states.router)
+    application.include_router(home.router)
+    application.mount(
+        "/static",
+        StaticFiles(directory="static"),
+        name="static",
+    )
 
     return application
 

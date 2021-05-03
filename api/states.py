@@ -4,8 +4,8 @@ from typing import List, Optional
 
 from fastapi import APIRouter, Query
 
-from app.crud.db import get, get_all
-from app.models.state_model import StatesOut
+from crud.db import get, get_all
+from models.state_model import StatesOut
 
 router = APIRouter(
     prefix="/states",
