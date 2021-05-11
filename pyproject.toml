@@ -10,6 +10,8 @@ fastapi = {extras = ["all"], version = "^0.63.0"}
 environs = "^9.3.2"
 deta = "^0.7"
 rich = "^10.1.0"
+pendulum = "^2.1.2"
+redis = "^3.5.3"
 
 [tool.poetry.dev-dependencies]
 pytest-clarity = "^0.3.0-alpha.0"

@@ -14,11 +14,14 @@ def get(state):
     Helper function specific state.
     """
     if state:
-        return next(db.fetch({"states?contains": state.capitalize()}))
+        return sorted(
+            next(db.fetch({"states?contains": state.capitalize()})),
+            key=lambda x: x["abbr"],
+        )
 
 
 def get_all():
     """
     Return all states.
     """
-    return next(db.fetch())
+    return sorted(next(db.fetch()), key=lambda x: x["abbr"])
