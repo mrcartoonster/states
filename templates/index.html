@@ -1,14 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="flex text-xl flex-col justify-center items-center w-1/2 m-8">
-  <div class="justify-start bg-gray-600">
-  <h1 class="text-6xl font-black text-gray-400">API for State abbreviations</h1>
+<div class="tracking-wider text-xl w-1/2 mt-56">
+
+  <div class="mb-10 justify-around">
+    <h1 class="flex text-6xl text-tuatara-300"> <img src="{{ url_for('static',
+                                                          path='/img/favicon.ico') }}" alt="American Flag">API for State abbreviations</h1>
   </div>
 
-  <p class="mt-4">Welcome to US States abbreviations. This is a simple API that outputs US State abbreviations. There aren't many API's out there that simply output state abbreviations so this API now exists! You can just get a list of all the state abbreviations or you can search for the specific state you need. You can go view and try out this API from the browser by going to the <a href="" target="_blank" rel="noopener noreferrer">Swagger UI </a> or the <a href="" target="_blank" rel="noopener noreferrer">ReDoc UI</a>.</p>
+  <p class="mt-4">This API can get you the abbreviations of all 50 US states in one call. Or search for a specific state. All the information is returned as a string dictionary, therefore no application logic needed. You can quickly try out this API by going to <a class="text-nebula-600 underline" href="" target="_blank"
+     rel="noopener noreferrer">Swagger UI </a> or the <a class="text-nebula-600
+                                                                 underline"  href="" target="_blank" rel="noopener noreferrer">ReDoc UI</a>.</p>
+  <p class="mt-4">
+  This API is built using <a class="text-nebula-600 underline" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI</a>. It's a Python micro webframework that is great for Machine Learning models. You can view the code on GitHub here. This is a simple API that was thrown together in a couple of days. This framework can do a lot more and is a go-to for handling Machine learning models. You can view the minimal code that powers this site and API in the <a class="text-nebula-600 underline" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">GitHub</a> repo.
+  </p>
 
-  <p class="mt-4">This is a free API hosted on <a href="https://www.deta.sh/" target="_blank" rel="noopener noreferrer">Deta.sh</a> using the <a href="https://www.deta.sh/pricing" target="_blank" rel="noopener noreferrer">explorer tier</a>. This means that only 25K requests can be made to this API a month. I haven't rate limited it yet, but will if this API get's more then 25K requests a month. If you really like this service and want to up the requests per-month, sponsor this project on <a href="https://github.com/sponsors/mrcartoonster/dashboard" target="_blank" rel="noopener noreferrer">GitHub Sponsors </a> and I'll add API keys so you can up the requests by moving this up a tier in Deta.sh.</p>
-
-  <p class="mt-4">This API is built using <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI</a>. It's Python micro webframework and it's mission statment is <span class="font-semibold italic">FastAPI framework, high performance, easy to learn, fast to code, ready for production</span> it definitely lives up to that mission statement. You can view the code on GitHub here. This is simple API that was thrown together in a couple of days. This framework can do a lot more and is a go to for handling Machine learning models. I went through this course from TestDriven.io that shows all the capabilites of this wonderful framework.</p>
+  <p class="mt-4">This is a free API hosted on <a class="text-nebula-600
+                                                         underline" href="https://www.deta.sh/" target="_blank" rel="noopener noreferrer">Deta.sh</a>. They offer free hosting!
 </div>
 {% endblock %}
