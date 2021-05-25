@@ -1,21 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="tracking-wider leading-relaxed text-2xl w-1/2 mt-56">
+<div class="tracking-wider leading-relaxed text-shark-500 text-2xl w-1/2 mt-56">
 
   <div class="mb-10 justify-around">
-    <h1 class="flex text-6xl text-black-300"> <img src="{{ url_for('static',
+    <h1 class="flex text-6xl text-shark-700"> <img src="{{ url_for('static',
                                                           path='/img/favicon.ico') }}" alt="American Flag">API for State abbreviations</h1>
   </div>
 
-  <p class="text-royal-blue-500">Color test</p>
-  <p class="mt-4">This API can get you the abbreviations of all 50 US states in one call. Or search for a specific state. All the information is returned as a string dictionary, therefore no application logic needed. You can quickly try out this API by going to <a class="text-royal-blue-300 underline" href="" target="_blank"
-     rel="noopener noreferrer">Swagger UI </a> or the <a class="text-royal-blue-300
+  <!-- Color testing
+  <p class="text-royal-blue-500">Color test</p> -->
+  <!-- Color testing -->
+
+  <p class="mt-4">This API can get you the abbreviations of all 50 US states in one call. Or search for a specific state. All the information is returned as a string dictionary, therefore no application logic needed. You can quickly try out this API by going to <a class="text-blue-600 underline" href="" target="_blank"
+     rel="noopener noreferrer">Swagger UI </a> or the <a class="text-blue-600
                                                                  underline"  href="" target="_blank" rel="noopener noreferrer">ReDoc UI</a>.</p>
   <p class="mt-4">
-  This API is built using <a class="text-royal-blue-100 underline" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI</a>. It's a Python micro webframework that is great for Machine Learning models. You can view the code on GitHub here. This is a simple API that was thrown together in a couple of days. This framework can do a lot more and is a go-to for handling Machine learning models. You can view the minimal code that powers this site and API in the <a class="text-royal-blue-300 underline" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">GitHub</a> repo.
+  This API is built using <a class="text-blue-600 underline" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer">FastAPI</a>. It's a Python micro webframework that is great for Machine Learning models. This is a simple API that was thrown together in a couple of days. This framework can do a lot more and is a go-to for handling Machine learning models. You can view the minimal code that powers this site and API in the <a class="text-blue-600 underline" href="https://github.com/mrcartoonster/states" target="_blank" rel="noopener noreferrer">GitHub</a> repo.
   </p>
 
-  <p class="mt-4">This is a free API hosted on <a class="text-royal-blue-300
+  <p class="mt-4">This is a free API hosted on <a class="text-blue-600
                                                          underline" href="https://www.deta.sh/" target="_blank" rel="noopener noreferrer">Deta.sh</a>. They offer free hosting!
 </div>
 {% endblock %}

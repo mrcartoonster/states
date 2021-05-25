@@ -4,7 +4,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      'shark': {
+      colors: {
+        'shark': {
     '50': '#f4f4f4',
     '100': '#e9e9e9',
     '200': '#c8c8c8',
@@ -60,6 +61,7 @@ module.exports = {
     '800': '#99987d',
     '900': '#7d7c66'
 }
+      }
     },
   },
   variants: {},
