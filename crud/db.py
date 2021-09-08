@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # Simple Deta *detabase SDK* setup.
+from operator import itemgetter
+
 from deta import Deta
 from environs import Env
 
@@ -21,4 +23,4 @@ def get_all():
     """
     Return all states.
     """
-    return next(db.fetch())
+    return sorted(next(db.fetch()), key=itemgetter("abbr"))

@@ -19,7 +19,10 @@ async def states(
         None,
         min_length=2,
         max_length=14,
-        description="Enter at least the first to letters of the state.",
+        description=(
+            "Leave empty to get all the US States or enter at least "
+            "two letters of the US state to get abbreviaton."
+        ),
     ),
 ):
     """
